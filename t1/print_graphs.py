@@ -7,8 +7,11 @@ def main():
     adj_g_pdf = np.loadtxt('data/adjnouns-degree-pdf.txt', delimiter=',')
     adj_g_x = np.loadtxt('data/adjnouns-degree-x.txt', delimiter=',')
 
-    cel_g_pdf = np.loadtxt('data/celegans-degree-pdf.txt', delimiter=',')
-    cel_g_x = np.loadtxt('data/celegans-degree-x.txt', delimiter=',')
+    cel_g_pdf_in = np.loadtxt('data/celegans-in-degree-pdf.txt', delimiter=',')
+    cel_g_x_in = np.loadtxt('data/celegans-in-degree-x.txt', delimiter=',')
+
+    cel_g_pdf_out = np.loadtxt('data/celegans-out-degree-pdf.txt', delimiter=',')
+    cel_g_x_out = np.loadtxt('data/celegans-out-degree-x.txt', delimiter=',')
 
     hos_g_pdf = np.loadtxt('data/hospital-degree-pdf.txt', delimiter=',')
     hos_g_x = np.loadtxt('data/hospital-degree-x.txt', delimiter=',')
@@ -20,8 +23,10 @@ def main():
     plt.title('Empirical PDF (Degree)')
     plt.plot(adj_g_x, adj_g_pdf, alpha=0.5, label='Adjnouns')
     plt.scatter(adj_g_x, adj_g_pdf, alpha=0.5)
-    plt.plot(cel_g_x, cel_g_pdf, alpha=0.5, label='C. Elegans')
-    plt.scatter(cel_g_x, cel_g_pdf, alpha=0.5)
+    plt.plot(cel_g_x_in, cel_g_pdf_in, alpha=0.5, label='C. Elegans (in)')
+    plt.scatter(cel_g_x_in, cel_g_pdf_in, alpha=0.5)
+    plt.plot(cel_g_x_out, cel_g_pdf_out, alpha=0.5, label='C. Elegans (out)')
+    plt.scatter(cel_g_x_out, cel_g_pdf_out, alpha=0.5)
     plt.plot(hos_g_x, hos_g_pdf, alpha=0.5, label='Hospital')
     plt.scatter(hos_g_x, hos_g_pdf, alpha=0.5)
     plt.plot(pro_g_x, pro_g_pdf, alpha=0.5, label='Protein')
@@ -64,7 +69,9 @@ def main():
     # Degree - CCDF
     adj_g_ccdf = np.loadtxt('data/adjnouns-degree-ccdf.txt', delimiter=',')
 
-    cel_g_ccdf = np.loadtxt('data/celegans-degree-ccdf.txt', delimiter=',')
+    cel_g_ccdf_in = np.loadtxt('data/celegans-in-degree-ccdf.txt', delimiter=',')
+
+    cel_g_ccdf_out = np.loadtxt('data/celegans-out-degree-ccdf.txt', delimiter=',')
 
     hos_g_ccdf = np.loadtxt('data/hospital-degree-ccdf.txt', delimiter=',')
 
@@ -75,7 +82,8 @@ def main():
     #plt.plot(adj_g_x, adj_g_ccdf, alpha=0.5, label='Adjnouns')
     plt.scatter(adj_g_x, adj_g_ccdf, alpha=0.5, label='Adjnouns')
     #plt.plot(cel_g_x, cel_g_ccdf, alpha=0.5, label='C. Elegans')
-    plt.scatter(cel_g_x, cel_g_ccdf, alpha=0.5, label='C. Elegans')
+    plt.scatter(cel_g_x_in, cel_g_ccdf_in, alpha=0.5, label='C. Elegans (in)')
+    plt.scatter(cel_g_x_out, cel_g_ccdf_out, alpha=0.5, label='C. Elegans (out)')
     #plt.plot(hos_g_x, hos_g_ccdf, alpha=0.5, label='Hospital')
     plt.scatter(hos_g_x, hos_g_ccdf, alpha=0.5, label='Hospital')
     #plt.plot(pro_g_x, pro_g_ccdf, alpha=0.5, label='Protein')
